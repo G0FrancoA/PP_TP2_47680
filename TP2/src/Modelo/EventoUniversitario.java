@@ -11,6 +11,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListResourceBundle;
 
 public class EventoUniversitario implements Serializable {
 
@@ -149,5 +150,25 @@ public class EventoUniversitario implements Serializable {
         }
 
         return false;
+    }
+
+    //Parametrizacion
+
+    public <T extends Actividad> List<T> filtrarActividadesPorTipo (Class <T> tipo) {
+        List<T> resultado = new ArrayList<>();
+        for (Actividad act : actividades) {
+            if (tipo.isInstance(act)){
+                resultado.add (tipo.cast(act));
+            }
+        }
+        return resultado;
+    }
+
+    public double calcularCostoMateriales (List<? extends Actividad> lista){
+        double total = 0.0;
+        for (Actividad act : lista){
+            total += act.calcularCostoMateriales();
+        }
+        return total;
     }
 }

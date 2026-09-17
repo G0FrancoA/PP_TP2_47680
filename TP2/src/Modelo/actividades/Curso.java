@@ -31,8 +31,8 @@ public class Curso extends Actividad implements Certificable {
     @Override
     public String generarCertificado(Estudiante estudiante) {
 
-        return "CERTIFICADO DE APROBACION (" + ENTIDAD_EMISORA + ")"
-                + "Otorgado a: " + estudiante.getNombre() + "Legajo: " + estudiante.getLegajo()
-                + "Por completar el Curso: " + getTitulo() + "(horas: " + horas + ")";
+        return "CERTIFICADO DE APROBACION (" + ENTIDAD_EMISORA + ") "
+                + " Otorgado a " + estudiante.getNombre() +" - " +"Legajo: " + estudiante.getLegajo()
+                + " Por completar el Curso: " + getTitulo() + " (horas: " + horas + ") ";
     }
 }

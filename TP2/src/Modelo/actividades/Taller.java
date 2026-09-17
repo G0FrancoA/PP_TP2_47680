@@ -34,8 +34,8 @@ public class Taller extends Actividad implements Certificable {
     @Override
     public String generarCertificado(Estudiante estudiante) {
 
-        return "CERTIFICADO DE ASISTENCIA (" + ENTIDAD_EMISORA + ")"
-                + "Otorgado a: " + estudiante.getNombre() + "Legajo: " + estudiante.getLegajo()
-                + "Por haber asistido al curso de: " + getTitulo() + ")";
+        return "CERTIFICADO DE ASISTENCIA (" + ENTIDAD_EMISORA + ") "
+                + " Otorgado a " + estudiante.getNombre() + " - " + "Legajo: " + estudiante.getLegajo()
+                + " Por haber asistido al curso de: " + getTitulo() + ") ";
     }
 }
